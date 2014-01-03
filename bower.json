@@ -1,0 +1,20 @@
+{
+  "name": "w1_temp",
+  "version": "0.0.0",
+  "authors": [
+    "TMZ"
+  ],
+  "license": "FOO",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "d3": "~3.3.13"
+  }
+}
