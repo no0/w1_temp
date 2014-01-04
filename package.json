@@ -12,6 +12,8 @@
     "express": "~3.4.7",
     "async": "~0.2.9",
     "sqlite3": "~2.1.19",
-    "socket.io": "~0.9.16"
+    "socket.io": "~0.9.16",
+    "coffee-script": "~1.6.3",
+    "connect-coffee-script": "~0.1.6"
   }
 }

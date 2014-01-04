@@ -4,6 +4,7 @@ path = require 'path'
 
 express = require 'express'
 
+coffeescript = require 'connect-coffee-script'
 async = require 'async'
 sqlite3 = require 'sqlite3'
 
@@ -55,24 +56,21 @@ app = express()
 
 app.set 'env', process.env.ENV or 'dev'
 app.set 'port', process.env.PORT or 3000
-app.use express.logger('dev')
+app.use express.logger 'dev'
 app.use express.urlencoded()
 app.use express.methodOverride()
 app.use express.bodyParser()
 app.use app.router
-app.use express.static(path.join(__dirname, 'public'))
+app.use coffeescript src: path.join __dirname, 'public'
+app.use express.static path.join __dirname, 'public'
 if 'development' is app.get('env')
   app.use express.errorHandler()
 
 app.get '/temps', (req, res) ->
   timeAgo = parseInt(req.query.ago, 10) or 5
   sql = "select * from temp_readings where timestamp > datetime('now', '-#{timeAgo} minutes', 'localtime')"
-  db.all sql, (err, rows) ->
-    res.json rows
-app.get '/last', (req, res) ->
-  res.json lastReading
-app.get '/', (req, res) ->
-  res.json lastReading
+  db.all sql, (err, rows) -> res.json rows
+app.get '/last', (req, res) -> res.json lastReading
 
 server = http.createServer(app).listen app.get('port'), ->
   console.log('Express server listening on port ' + app.get('port'))
