@@ -12,7 +12,7 @@ base_dir = '/sys/bus/w1/devices'
 readingOk = /YES$/
 sensors = 
   '/sys/bus/w1/devices/28-000004b2ae2d/w1_slave': 'u'
-  '/sys/bus/w1/devices/28-000004b2ef65/w1_slave': 'o'
+  # '/sys/bus/w1/devices/28-000004b2ef65/w1_slave': 'o'
   '/sys/bus/w1/devices/28-000004b3782b/w1_slave': 'g'
 lastReading = []
 
@@ -50,7 +50,7 @@ rwLoop = ->
   readAndRecord ->
     setTimeout rwLoop, 60 * 1000
 
-db = new sqlite3.Database 'temps.db', -> rwLoop()
+db = new sqlite3.Database 'db/temps.db', -> rwLoop()
 
 app = express()
 
