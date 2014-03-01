@@ -1,0 +1,44 @@
+* Intro / Demo
+  Electricity is dangerous and deadly be sure you know what you're doing.
+* Meatspace stuff
+ + Raspberry pi
+ + Sensors
+   - Dallas one-wire
+   - SPI
+   - I2C
+ + Parts
+   - Breadboard
+   - Wire
+   - Adafruit Assembled Pi Cobbler Breakout + Cable
+   - Resistors
+ + Networks
+   - Cat 5
+   - Zigbee
+ + Tools
+   - Cat 5
+   - RJ-45 ends
+   - RJ-45 sockets
+   - Punch-down tool
+   - Crimper
+   - (Multi-meter)
+   - (Soldering iron)
+* Software
+ + http://www.raspbian.org
+ + build-essential for building binary npm packages
+ + avahi-daemon for finding raspberrypi on the network
+ + NodeJs http://nodejs.org/dist/
+   - Builds for Pi are sporadic. Search releases for node-v0.10.24-linux- *arm* -pi.tar.gz
+ + Favorite development tools
+* Src
+
+* Resources and parts
+ + http://www.adafruit.com
+ + https://www.sparkfun.com
+ + http://www.alliedelec.com
+
+* Double duties for raspberrypi
+ + Airplay target
+ + Wireless print server
+ + XBMC
+* Outro
+  Electricity is dangerous and deadly be sure you know what you're doing.
