@@ -112,9 +112,3 @@ require ['jquery', 'd3', 'socketio'], ->
 
   graph = new TempGraph().buildBits().grabData()
   ct = new CurrentTemp()
-
-  mkDate = new Date(2014, 0, 12, 17, 30, 0)
-  $('body').append $mk = $ '<div></div>'
-  setInterval ->
-    $mk.html("Hours to marshmallow: " + ((mkDate - Date.now()) / 1000 / 60 / 60).toFixed(3))
-  , 1000
