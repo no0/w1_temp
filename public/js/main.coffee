@@ -49,7 +49,7 @@ require ['jquery', 'd3', 'socketio'], ->
 
       @data.forEach((d) => d.date = @parseDate(d.timestamp) )
 
-      @cities = @color.domain().map((name) =>
+      @locations = @color.domain().map((name) =>
         return {
           name: name,
           values: @data.map((d) ->
@@ -62,8 +62,8 @@ require ['jquery', 'd3', 'socketio'], ->
       @x.domain(d3.extent(@data, (d) -> return d.date ))
 
       @y.domain([
-        d3.min(@cities, (c) -> return d3.min(c.values, (v) -> return v.temperature ) ),
-        d3.max(@cities, (c) -> return d3.max(c.values, (v) -> return v.temperature ) )
+        d3.min(@locations, (c) -> return d3.min(c.values, (v) -> return v.temperature ) ),
+        d3.max(@locations, (c) -> return d3.max(c.values, (v) -> return v.temperature ) )
       ])
 
       @svg.append("g")
@@ -81,17 +81,17 @@ require ['jquery', 'd3', 'socketio'], ->
           .style("text-anchor", "end")
           .text("Temperature (ºF)")
 
-      @city = @svg.selectAll(".city")
-        .data(@cities)
+      @location = @svg.selectAll(".location")
+        .data(@locations)
         .enter().append("g")
-        .attr("class", "city")
+        .attr("class", "location")
 
-      @city.append("path")
+      @location.append("path")
         .attr("class", "line")
         .attr("d", (d) => return @line(d.values) )
         .style("stroke", (d) => return @color(d.name) )
 
-      @city.append("text")
+      @location.append("text")
         .datum((d) -> return {name: d.name, value: d.values[d.values.length - 1]} )
         .attr("transform", (d) => return "translate(" + @x(d.value.date) + "," + @y(d.value.temperature) + ")" )
         .attr("x", 3)

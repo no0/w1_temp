@@ -52,5 +52,3 @@
  + Airplay target
  + Wireless print server
  + XBMC
-* Outro
-  Electricity is dangerous and deadly be sure you know what you're doing.
