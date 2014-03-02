@@ -26,6 +26,7 @@
   GPIO + 1-Wire: http://wannabe.guru.org/scott/hobbies/temperature/
   file:/~/Documents/projects/assets/GPIOs.png
   file:/~/Documents/projects/assets/DS18S20.png
+  1-wire supports star or serial topologies
 ** SPI (for other projects)
    http://www.100randomtasks.com/simple-spi-on-raspberry-pi
    file:/~/Documents/projects/assets/adc_to_rpi.jpeg
@@ -45,6 +46,9 @@
  + http://www.adafruit.com
  + https://www.sparkfun.com
  + http://www.alliedelec.com
+   Other 1-wire devices: 
+    - http://www.adafruit.com/index.php?main_page=adasearch&q=1-wire 
+    - http://www.maximintegrated.com/pl_list.cfm/filter/21/ln/en
 * Gotchas
   I roached my first SD card. You only get 10K writes on a SD card, those writes go can go quickly with sqlite.
    - Still working on a good compromise. 
